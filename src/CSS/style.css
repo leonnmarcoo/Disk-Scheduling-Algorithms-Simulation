@@ -1,0 +1,303 @@
+/* Modern Flat Design Color Palette */
+/* Primary: #4A90E2 (Blue) */
+/* Secondary: #2C3E50 (Dark Gray-Blue) */
+/* Accent: #FF6B6B (Coral Red) */
+/* Background: #F5F7FA (Light Gray) */
+/* Text: #2C3E50 */
+
+/* Root */
+.root {
+    -fx-background-color: #F5F7FA;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Header Section */
+.header-section {
+    -fx-padding: 0 0 10 0;
+    -fx-border-color: transparent transparent #E1E8ED transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.main-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* Panel */
+.panel {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+/* Section Titles */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+    -fx-border-color: #E1E8ED;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2C3E50;
+}
+
+.text-field:focused {
+    -fx-border-color: #4A90E2;
+    -fx-background-color: white;
+}
+
+/* Combo Box */
+.combo-box {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+    -fx-border-color: #E1E8ED;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4A90E2;
+    -fx-background-color: white;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 8px 12px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #E1E8ED;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 3);
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #F5F7FA;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.primary-button:hover {
+    -fx-background-color: #357ABD;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #2E6BA2;
+}
+
+.secondary-button {
+    -fx-background-color: #E1E8ED;
+    -fx-text-fill: #2C3E50;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #CBD5DC;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #B5C1CA;
+}
+
+/* List View */
+.list-view {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+    -fx-border-color: #E1E8ED;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 13px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: rgba(74, 144, 226, 0.1);
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+}
+
+.list-view:focused .list-cell:selected {
+    -fx-background-color: #4A90E2;
+}
+
+/* Text Area */
+.text-area {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+    -fx-border-color: #E1E8ED;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-font-family: "Consolas", "Monaco", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #2C3E50;
+}
+
+.text-area .content {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+}
+
+.text-area:focused {
+    -fx-border-color: #4A90E2;
+}
+
+/* Stats Container */
+.stats-container {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5px;
+    -fx-padding: 15;
+}
+
+.stat-box {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 1);
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7F8C8D;
+    -fx-font-weight: normal;
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A90E2;
+}
+
+/* Chart Styling */
+.chart {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+
+.chart-plot-background {
+    -fx-background-color: #F5F7FA;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #E1E8ED;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #E1E8ED;
+}
+
+.chart-vertical-zero-line,
+.chart-horizontal-zero-line {
+    -fx-stroke: #CBD5DC;
+}
+
+.axis {
+    -fx-tick-label-fill: #2C3E50;
+    -fx-font-size: 11px;
+}
+
+.axis-label {
+    -fx-text-fill: #2C3E50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.chart-line-symbol {
+    -fx-background-color: #4A90E2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.chart-series-line {
+    -fx-stroke: #4A90E2;
+    -fx-stroke-width: 3px;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #4A90E2;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #4A90E2;
+}
+
+/* Scroll Bar */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CBD5DC;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #B5C1CA;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}

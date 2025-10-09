@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Priority?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="Frontend.MainController" 
+      spacing="20" 
+      stylesheets="@../CSS/style.css" 
+      styleClass="root">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox styleClass="header-section" spacing="5">
+        <Label text="Disk Scheduling Algorithms Simulator" styleClass="main-title"/>
+        <Label text="Simulate and compare different disk scheduling strategies" styleClass="subtitle"/>
+    </VBox>
+
+    <!-- Main Content -->
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        
+        <!-- Left Panel - Configuration -->
+        <VBox spacing="15" styleClass="panel" prefWidth="350" minWidth="300">
+            <Label text="Configuration" styleClass="section-title"/>
+            
+            <!-- Algorithm Selection -->
+            <VBox spacing="5">
+                <Label text="Algorithm:" styleClass="label"/>
+                <ComboBox fx:id="algorithmComboBox" maxWidth="Infinity" styleClass="combo-box"/>
+            </VBox>
+
+            <!-- Scenario Selection -->
+            <VBox spacing="5">
+                <Label text="Request Scenario:" styleClass="label"/>
+                <ComboBox fx:id="scenarioComboBox" maxWidth="Infinity" styleClass="combo-box"/>
+            </VBox>
+
+            <!-- Parameters -->
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="60"/>
+                </columnConstraints>
+                
+                <Label text="Request Count:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="label"/>
+                <TextField fx:id="requestCountField" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
+                
+                <Label text="Disk Size:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label"/>
+                <TextField fx:id="diskSizeField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="text-field"/>
+                
+                <Label text="Head Position:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="label"/>
+                <TextField fx:id="headPositionField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field"/>
+            </GridPane>
+
+            <!-- Custom Requests (conditionally visible) -->
+            <VBox fx:id="customRequestsBox" spacing="5">
+                <Label text="Custom Requests (comma-separated):" styleClass="label"/>
+                <TextField fx:id="customRequestsField" promptText="e.g., 98, 183, 37, 122, 14, 124, 65, 67" styleClass="text-field"/>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10">
+                <Button fx:id="generateButton" text="Generate" onAction="#handleGenerate" styleClass="primary-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button fx:id="runButton" text="Run Algorithm" onAction="#handleRun" styleClass="primary-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </HBox>
+            
+            <Button fx:id="resetButton" text="Reset" onAction="#handleReset" styleClass="secondary-button" maxWidth="Infinity"/>
+
+            <!-- Request List -->
+            <VBox spacing="5" VBox.vgrow="ALWAYS">
+                <Label text="Generated Requests:" styleClass="label"/>
+                <ListView fx:id="requestListView" VBox.vgrow="ALWAYS" styleClass="list-view"/>
+            </VBox>
+        </VBox>
+
+        <!-- Right Panel - Visualization and Results -->
+        <VBox spacing="15" styleClass="panel" HBox.hgrow="ALWAYS">
+            
+            <!-- Results Summary -->
+            <HBox spacing="20" styleClass="stats-container">
+                <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="stat-box">
+                    <Label text="Algorithm" styleClass="stat-label"/>
+                    <Label fx:id="algorithmLabel" text="None" styleClass="stat-value"/>
+                </VBox>
+                
+                <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="stat-box">
+                    <Label text="Total Seek Time" styleClass="stat-label"/>
+                    <Label fx:id="totalSeekLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                
+                <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="stat-box">
+                    <Label text="Average Seek Time" styleClass="stat-label"/>
+                    <Label fx:id="avgSeekLabel" text="0.00" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+
+            <!-- Chart -->
+            <VBox spacing="5" VBox.vgrow="ALWAYS">
+                <Label text="Seek Sequence Visualization" styleClass="section-title"/>
+                <LineChart fx:id="seekChart" VBox.vgrow="ALWAYS" styleClass="chart">
+                    <xAxis>
+                        <NumberAxis fx:id="xAxis" label="Request Order" side="BOTTOM" autoRanging="true"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" label="Track Number" side="LEFT" autoRanging="true"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+
+            <!-- Detailed Results -->
+            <VBox spacing="5">
+                <Label text="Detailed Results" styleClass="section-title"/>
+                <TextArea fx:id="resultTextArea" 
+                         prefRowCount="8" 
+                         editable="false" 
+                         wrapText="true" 
+                         styleClass="text-area"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>
