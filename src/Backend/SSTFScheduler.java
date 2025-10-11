@@ -20,9 +20,7 @@ public class SSTFScheduler implements DiskScheduler {
         int currentPosition = initialHeadPosition;
         int totalSeekTime = 0;
         
-        // Process all requests
         while (!remainingRequests.isEmpty()) {
-            // Find the closest request
             DiskRequest closest = null;
             int minDistance = Integer.MAX_VALUE;
             

@@ -11,9 +11,7 @@ public class RequestGenerator {
         this.random = new Random();
     }
     
-    /**
-     * Generate random requests
-     */
+    // Generate random requests
     public List<DiskRequest> generateRandom(int count, int diskSize) {
         List<DiskRequest> requests = new ArrayList<>();
         for (int i = 0; i < count; i++) {
@@ -22,10 +20,8 @@ public class RequestGenerator {
         }
         return requests;
     }
-    
-    /**
-     * Generate clustered requests (grouped around certain areas)
-     */
+
+    // Generate clustered requests (grouped around certain areas)
     public List<DiskRequest> generateClustered(int count, int diskSize, int clusterCount) {
         List<DiskRequest> requests = new ArrayList<>();
         int requestsPerCluster = count / clusterCount;
@@ -51,9 +47,7 @@ public class RequestGenerator {
         return requests;
     }
     
-    /**
-     * Generate sequential requests
-     */
+    // Generate sequential requests
     public List<DiskRequest> generateSequential(int count, int diskSize, boolean ascending) {
         List<DiskRequest> requests = new ArrayList<>();
         int start = random.nextInt(diskSize / 2);
