@@ -21,6 +21,18 @@ java --module-path lib --add-modules javafx.controls,javafx.fxml -cp bin Main
 
 ## How to Use
 
+### Landing Page
+When you first launch the application, you'll see a beautiful landing page featuring:
+- **Hero Section**: Introduction to the project
+- **Algorithms Overview**: Cards showing all 4 algorithms with descriptions
+- **Features**: Showcase of key features
+- **Tech Stack**: Technologies and tools used
+- **Team**: Meet the developers and contributors
+
+Click the **"Launch Simulator"** button to access the main application.
+
+### Main Simulator
+
 1. **Choose an Algorithm**: Select from FCFS, SSTF, SCAN, or C-SCAN
 2. **Select Request Scenario**: 
    - Random: Randomly distributed requests

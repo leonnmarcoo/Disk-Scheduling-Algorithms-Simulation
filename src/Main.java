@@ -8,13 +8,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Frontend/MainView.fxml"));
+        // Load the landing page first
+        Parent root = FXMLLoader.load(getClass().getResource("Frontend/LandingPage.fxml"));
         
-        Scene scene = new Scene(root, 1400, 800);
+        Scene scene = new Scene(root, 1400, 850);
         
-        primaryStage.setTitle("Disk Scheduling Algorithms Simulator");
+        primaryStage.setTitle("Disk Scheduling Algorithms - Home");
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(1200);
+        primaryStage.setMinWidth(1000);
         primaryStage.setMinHeight(700);
         primaryStage.show();
     }

@@ -40,10 +40,12 @@ A comprehensive JavaFX application that simulates and visualizes various disk sc
 ## 🎨 User Interface
 
 The application features a modern, flat design with:
-- Clean 2-color palette (Blue #4A90E2 and Dark Gray-Blue #2C3E50)
+- **Landing Page**: Beautiful hero section introducing the project, algorithms overview, features showcase, tech stack display, and team member profiles
+- **Simulator Interface**: Clean 2-color palette (Blue #4A90E2 and Dark Gray-Blue #2C3E50)
 - Intuitive layout with configuration panel and visualization area
 - Real-time animated visualization of disk head movement
 - Responsive design with proper spacing and shadows
+- Smooth transitions between landing page and simulator
 
 ## 🚀 Getting Started
 
@@ -70,15 +72,22 @@ java --module-path lib --add-modules javafx.controls,javafx.fxml -cp bin Main
 
 ### Using the Application
 
-1. **Select Algorithm**: Choose from FCFS, SSTF, SCAN, or C-SCAN
-2. **Choose Scenario**: Select a request generation pattern or use custom requests
-3. **Set Parameters**:
+1. **Landing Page**: When you start the application, you'll see a beautiful landing page with:
+   - Hero section introducing the project
+   - Overview of all 4 algorithms with descriptions
+   - Feature highlights
+   - Tech stack information
+   - Team member profiles
+2. **Launch Simulator**: Click the "Launch Simulator" button to enter the main application
+3. **Select Algorithm**: Choose from FCFS, SSTF, SCAN, or C-SCAN
+4. **Choose Scenario**: Select a request generation pattern or use custom requests
+5. **Set Parameters**:
    - Request Count: Number of disk requests to generate
    - Disk Size: Total number of tracks on the disk
    - Head Position: Initial position of the disk head
-4. **Generate Requests**: Click "Generate" to create request sequence
-5. **Run Simulation**: Click "Run Algorithm" to execute the scheduling algorithm
-6. **View Results**: Analyze the visualization and detailed metrics
+6. **Generate Requests**: Click "Generate" to create request sequence
+7. **Run Simulation**: Click "Run Algorithm" to execute the scheduling algorithm
+8. **View Results**: Analyze the visualization and detailed metrics
 
 ## 📁 Project Structure
 
@@ -93,12 +102,16 @@ src/
 │   ├── SCANScheduler.java            # SCAN implementation
 │   ├── CSCANScheduler.java           # C-SCAN implementation
 │   ├── SchedulingResult.java         # Result data model
-│   └── RequestGenerator.java         # Request generation utility
+│   ├── RequestGenerator.java         # Request generation utility
+│   └── AlgorithmTest.java            # Testing utility
 ├── Frontend/
-│   ├── MainController.java           # JavaFX controller
-│   └── MainView.fxml                 # UI layout (Scene Builder compatible)
+│   ├── LandingController.java        # Landing page controller
+│   ├── LandingPage.fxml              # Landing page layout
+│   ├── MainController.java           # Simulator controller
+│   └── MainView.fxml                 # Simulator UI layout (Scene Builder compatible)
 └── CSS/
-    └── style.css                     # Modern flat design styles
+    ├── landing.css                   # Landing page styles
+    └── style.css                     # Simulator styles
 ```
 
 ## 🎓 Educational Value

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Frontend.LandingController"
+            fitToWidth="true"
+            stylesheets="@../CSS/landing.css"
+            styleClass="scroll-pane">
+    
+    <VBox styleClass="landing-root" spacing="0">
+        
+        <VBox styleClass="hero-section" alignment="CENTER" spacing="20">
+            <VBox alignment="CENTER" spacing="15">
+                <Label text="Disk Scheduling Algorithms" styleClass="hero-title"/>
+                <Label text="Simulation &amp; Visualization" styleClass="hero-subtitle"/>
+                <Label text="An interactive JavaFX application to simulate and compare disk scheduling strategies used in operating systems" 
+                       styleClass="hero-description" 
+                       wrapText="true" 
+                       maxWidth="700"/>
+                <Button text="Launch Simulator" 
+                        onAction="#handleLaunchSimulator" 
+                        styleClass="cta-button"/>
+            </VBox>
+        </VBox>
+
+        <VBox styleClass="section algorithms-section" spacing="30">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Algorithms" styleClass="section-title"/>
+                <Label text="Explore four fundamental disk scheduling algorithms" styleClass="section-subtitle"/>
+            </VBox>
+
+            <HBox alignment="CENTER">
+                <GridPane hgap="20" vgap="20" alignment="CENTER" maxWidth="1200">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+                    <padding>
+                        <Insets left="60" right="60"/>
+                    </padding>
+
+                <VBox styleClass="algorithm-card" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="FCFS" styleClass="algorithm-name"/>
+                    <Label text="First-Come, First-Served" styleClass="algorithm-title"/>
+                    <Label text="Processes disk requests in the order they arrive. Simple and fair, but may not optimize head movement efficiently." 
+                           styleClass="algorithm-description" 
+                           wrapText="true"/>
+                    <HBox spacing="10" styleClass="algorithm-metrics">
+                        <Label text="⚡ Simple" styleClass="metric-badge"/>
+                        <Label text="✓ Fair" styleClass="metric-badge"/>
+                        <Label text="⚠ Non-optimal" styleClass="metric-badge"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="algorithm-card" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="SSTF" styleClass="algorithm-name"/>
+                    <Label text="Shortest Seek Time First" styleClass="algorithm-title"/>
+                    <Label text="Prioritizes requests closest to current head position. Minimizes seek time but may cause starvation of distant requests." 
+                           styleClass="algorithm-description" 
+                           wrapText="true"/>
+                    <HBox spacing="10" styleClass="algorithm-metrics">
+                        <Label text="🚀 Fast" styleClass="metric-badge"/>
+                        <Label text="✓ Efficient" styleClass="metric-badge"/>
+                        <Label text="⚠ Starvation Risk" styleClass="metric-badge"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="algorithm-card" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="SCAN" styleClass="algorithm-name"/>
+                    <Label text="Elevator Algorithm" styleClass="algorithm-title"/>
+                    <Label text="Disk arm moves in one direction servicing requests, then reverses. Provides fair distribution and predictable behavior." 
+                           styleClass="algorithm-description" 
+                           wrapText="true"/>
+                    <HBox spacing="10" styleClass="algorithm-metrics">
+                        <Label text="⚖ Balanced" styleClass="metric-badge"/>
+                        <Label text="✓ No Starvation" styleClass="metric-badge"/>
+                        <Label text="✓ Predictable" styleClass="metric-badge"/>
+                    </HBox>
+                </VBox>
+
+                <VBox styleClass="algorithm-card" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="C-SCAN" styleClass="algorithm-name"/>
+                    <Label text="Circular SCAN" styleClass="algorithm-title"/>
+                    <Label text="Similar to SCAN but jumps to the opposite end after reaching the boundary. Offers more uniform wait times." 
+                           styleClass="algorithm-description" 
+                           wrapText="true"/>
+                    <HBox spacing="10" styleClass="algorithm-metrics">
+                        <Label text="⏱ Uniform" styleClass="metric-badge"/>
+                        <Label text="✓ Consistent" styleClass="metric-badge"/>
+                        <Label text="✓ Fair" styleClass="metric-badge"/>
+                    </HBox>
+                </VBox>
+            </GridPane>
+            </HBox>
+        </VBox>
+
+        <VBox styleClass="section features-section" spacing="30">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Features" styleClass="section-title"/>
+                <Label text="Everything you need to understand disk scheduling" styleClass="section-subtitle"/>
+            </VBox>
+
+            <HBox alignment="CENTER">
+                <GridPane hgap="30" vgap="30" alignment="CENTER" maxWidth="1200">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="33.33"/>
+                        <ColumnConstraints percentWidth="33.33"/>
+                        <ColumnConstraints percentWidth="33.33"/>
+                    </columnConstraints>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="📊" styleClass="feature-icon"/>
+                    <Label text="Visual Simulation" styleClass="feature-title"/>
+                    <Label text="Real-time animated visualization of disk head movement" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="📈" styleClass="feature-icon"/>
+                    <Label text="Performance Metrics" styleClass="feature-title"/>
+                    <Label text="Track total seek time, average seek time, and detailed movement" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="🎲" styleClass="feature-icon"/>
+                    <Label text="Multiple Scenarios" styleClass="feature-title"/>
+                    <Label text="Random, clustered, sequential, or custom request patterns" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="⚖️" styleClass="feature-icon"/>
+                    <Label text="Algorithm Comparison" styleClass="feature-title"/>
+                    <Label text="Compare all four algorithms side-by-side with same dataset" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="🎨" styleClass="feature-icon"/>
+                    <Label text="Modern UI/UX" styleClass="feature-title"/>
+                    <Label text="Clean, flat design with intuitive controls and smooth animations" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+
+                <VBox styleClass="feature-card" spacing="10" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <Label text="🎓" styleClass="feature-icon"/>
+                    <Label text="Educational Tool" styleClass="feature-title"/>
+                    <Label text="Perfect for learning OS concepts and algorithm analysis" 
+                           styleClass="feature-description" 
+                           wrapText="true" 
+                           textAlignment="CENTER"/>
+                </VBox>
+            </GridPane>
+            </HBox>
+        </VBox>
+
+        <VBox styleClass="section tech-section" spacing="30">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Tech Stack" styleClass="section-title"/>
+                <Label text="Built with modern technologies and tools" styleClass="section-subtitle"/>
+            </VBox>
+
+            <HBox spacing="50" alignment="CENTER">
+                <VBox styleClass="tech-category" spacing="15" alignment="CENTER">
+                    <Label text="💻 Languages" styleClass="tech-category-title"/>
+                    <VBox spacing="8" alignment="CENTER">
+                        <Label text="Java" styleClass="tech-item"/>
+                        <Label text="CSS" styleClass="tech-item"/>
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="tech-category" spacing="15" alignment="CENTER">
+                    <Label text="📚 Libraries" styleClass="tech-category-title"/>
+                    <VBox spacing="8" alignment="CENTER">
+                        <Label text="JavaFX" styleClass="tech-item"/>
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="tech-category" spacing="15" alignment="CENTER">
+                    <Label text="🛠 Tools" styleClass="tech-category-title"/>
+                    <VBox spacing="8" alignment="CENTER">
+                        <Label text="SceneBuilder" styleClass="tech-item"/>
+                        <Label text="Figma" styleClass="tech-item"/>
+                        <Label text="VS Code" styleClass="tech-item"/>
+                        <Label text="GitHub" styleClass="tech-item"/>
+                    </VBox>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <VBox styleClass="section team-section" spacing="30">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="The Team" styleClass="section-title"/>
+                <Label text="Meet the people behind this project" styleClass="section-subtitle"/>
+            </VBox>
+
+            <HBox alignment="CENTER">
+                <GridPane hgap="40" vgap="40" alignment="CENTER" maxWidth="1200">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+                    <padding>
+                        <Insets left="60" right="60"/>
+                    </padding>
+
+                <VBox styleClass="team-card" spacing="15" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <StackPane styleClass="team-image-container">
+                        <Circle radius="60" styleClass="team-image-circle"/>
+                        <Label text="LD" styleClass="team-image-placeholder"/>
+                    </StackPane>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="Leon Marco Devela" styleClass="team-name"/>
+                        <Label text="Backend &amp; Frontend Developer" styleClass="team-role"/>
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="team-card" spacing="15" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <StackPane styleClass="team-image-container">
+                        <Circle radius="60" styleClass="team-image-circle"/>
+                        <Label text="CD" styleClass="team-image-placeholder"/>
+                    </StackPane>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="Carlxen Brieyl Duran" styleClass="team-name"/>
+                        <Label text="Documentation" styleClass="team-role"/>
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="team-card" spacing="15" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <StackPane styleClass="team-image-container">
+                        <Circle radius="60" styleClass="team-image-circle"/>
+                        <Label text="JM" styleClass="team-image-placeholder"/>
+                    </StackPane>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="Jersey Mae Marisga" styleClass="team-name"/>
+                        <Label text="Documentation" styleClass="team-role"/>
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="team-card" spacing="15" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <StackPane styleClass="team-image-container">
+                        <Circle radius="60" styleClass="team-image-circle"/>
+                        <Label text="JO" styleClass="team-image-placeholder"/>
+                    </StackPane>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="John Howard Ocampo" styleClass="team-name"/>
+                        <Label text="Script Writer" styleClass="team-role"/>
+                    </VBox>
+                </VBox>
+            </GridPane>
+            </HBox>
+        </VBox>
+
+        <VBox styleClass="footer" alignment="CENTER" spacing="10">
+            <Label text="Disk Scheduling Algorithms Simulation" styleClass="footer-text"/>
+            <Label text="© 2025 - Educational Project" styleClass="footer-subtext"/>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

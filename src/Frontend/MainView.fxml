@@ -26,32 +26,26 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Header -->
     <VBox styleClass="header-section" spacing="5">
         <Label text="Disk Scheduling Algorithms Simulator" styleClass="main-title"/>
         <Label text="Simulate and compare different disk scheduling strategies" styleClass="subtitle"/>
     </VBox>
 
-    <!-- Main Content -->
     <HBox spacing="20" VBox.vgrow="ALWAYS">
         
-        <!-- Left Panel - Configuration -->
         <VBox spacing="15" styleClass="panel" prefWidth="350" minWidth="300">
             <Label text="Configuration" styleClass="section-title"/>
             
-            <!-- Algorithm Selection -->
             <VBox spacing="5">
                 <Label text="Algorithm:" styleClass="label"/>
                 <ComboBox fx:id="algorithmComboBox" maxWidth="Infinity" styleClass="combo-box"/>
             </VBox>
 
-            <!-- Scenario Selection -->
             <VBox spacing="5">
                 <Label text="Request Scenario:" styleClass="label"/>
                 <ComboBox fx:id="scenarioComboBox" maxWidth="Infinity" styleClass="combo-box"/>
             </VBox>
 
-            <!-- Parameters -->
             <GridPane hgap="10" vgap="10">
                 <columnConstraints>
                     <ColumnConstraints percentWidth="40"/>
@@ -68,13 +62,11 @@
                 <TextField fx:id="headPositionField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field"/>
             </GridPane>
 
-            <!-- Custom Requests (conditionally visible) -->
             <VBox fx:id="customRequestsBox" spacing="5">
                 <Label text="Custom Requests (comma-separated):" styleClass="label"/>
                 <TextField fx:id="customRequestsField" promptText="e.g., 98, 183, 37, 122, 14, 124, 65, 67" styleClass="text-field"/>
             </VBox>
 
-            <!-- Action Buttons -->
             <HBox spacing="10">
                 <Button fx:id="generateButton" text="Generate" onAction="#handleGenerate" styleClass="primary-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
                 <Button fx:id="runButton" text="Run Algorithm" onAction="#handleRun" styleClass="primary-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
@@ -82,17 +74,14 @@
             
             <Button fx:id="resetButton" text="Reset" onAction="#handleReset" styleClass="secondary-button" maxWidth="Infinity"/>
 
-            <!-- Request List -->
             <VBox spacing="5" VBox.vgrow="ALWAYS">
                 <Label text="Generated Requests:" styleClass="label"/>
                 <ListView fx:id="requestListView" VBox.vgrow="ALWAYS" styleClass="list-view"/>
             </VBox>
         </VBox>
 
-        <!-- Right Panel - Visualization and Results -->
         <VBox spacing="15" styleClass="panel" HBox.hgrow="ALWAYS">
             
-            <!-- Results Summary -->
             <HBox spacing="20" styleClass="stats-container">
                 <VBox spacing="5" alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="stat-box">
                     <Label text="Algorithm" styleClass="stat-label"/>
@@ -110,7 +99,6 @@
                 </VBox>
             </HBox>
 
-            <!-- Chart -->
             <VBox spacing="5" VBox.vgrow="ALWAYS">
                 <Label text="Seek Sequence Visualization" styleClass="section-title"/>
                 <LineChart fx:id="seekChart" VBox.vgrow="ALWAYS" styleClass="chart">
@@ -123,7 +111,6 @@
                 </LineChart>
             </VBox>
 
-            <!-- Detailed Results -->
             <VBox spacing="5">
                 <Label text="Detailed Results" styleClass="section-title"/>
                 <TextArea fx:id="resultTextArea" 

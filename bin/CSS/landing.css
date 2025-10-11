@@ -1,0 +1,298 @@
+/* Landing Page Styles */
+
+/* Scroll Pane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #F5F7FA;
+}
+
+/* Landing Root */
+.landing-root {
+    -fx-background-color: #F5F7FA;
+}
+
+/* Hero Section */
+.hero-section {
+    -fx-background-color: #667eea;
+    -fx-padding: 120 40 120 40;
+}
+
+.hero-title {
+    -fx-font-size: 56px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 4);
+}
+
+.hero-subtitle {
+    -fx-font-size: 36px;
+    -fx-font-weight: 300;
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+}
+
+.hero-description {
+    -fx-font-size: 16px;
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-text-alignment: center;
+    -fx-line-spacing: 4px;
+}
+
+/* CTA Button */
+.cta-button {
+    -fx-background-color: white;
+    -fx-text-fill: #667eea;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30px;
+    -fx-padding: 15 40 15 40;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 15, 0, 0, 5);
+    -fx-border-width: 0;
+}
+
+.cta-button:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 20, 0, 0, 8);
+}
+
+.cta-button:pressed {
+    -fx-background-color: #e0e0e0;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Section Base */
+.section {
+    -fx-padding: 100 40 80 40;
+}
+
+.section-title {
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 0 0 10 0;
+}
+
+.section-subtitle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #7F8C8D;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Algorithms Section */
+.algorithms-section {
+    -fx-background-color: white;
+    -fx-padding: 100 40 80 40;
+}
+
+.algorithm-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 20, 0, 0, 5);
+    -fx-border-color: #E1E8ED;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+
+.algorithm-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.3), 25, 0, 0, 8);
+    -fx-border-color: #667eea;
+    -fx-translate-y: -5;
+}
+
+.algorithm-name {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #667eea;
+}
+
+.algorithm-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2C3E50;
+}
+
+.algorithm-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+    -fx-line-spacing: 3px;
+}
+
+.algorithm-metrics {
+    -fx-padding: 10 0 0 0;
+}
+
+.metric-badge {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 15px;
+    -fx-padding: 5 12 5 12;
+    -fx-font-size: 12px;
+    -fx-text-fill: #2C3E50;
+}
+
+/* Features Section */
+.features-section {
+    -fx-background-color: #F5F7FA;
+}
+
+.feature-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 15, 0, 0, 3);
+}
+
+.feature-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 5);
+    -fx-translate-y: -3;
+}
+
+.feature-icon {
+    -fx-font-size: 48px;
+}
+
+.feature-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.feature-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+    -fx-line-spacing: 2px;
+}
+
+/* Tech Stack Section */
+.tech-section {
+    -fx-background-color: white;
+}
+
+.tech-category {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 12px;
+    -fx-padding: 30 40 30 40;
+    -fx-min-width: 180px;
+}
+
+.tech-category-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #667eea;
+}
+
+.tech-item {
+    -fx-font-size: 15px;
+    -fx-text-fill: #2C3E50;
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 20 8 20;
+    -fx-min-width: 120px;
+    -fx-alignment: center;
+}
+
+/* Team Section */
+.team-section {
+    -fx-background-color: #F5F7FA;
+}
+
+.team-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 15, 0, 0, 3);
+}
+
+.team-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.2), 20, 0, 0, 5);
+    -fx-translate-y: -3;
+}
+
+.team-image-container {
+    -fx-padding: 10;
+}
+
+.team-image-circle {
+    -fx-fill: #667eea;
+}
+
+.team-image-placeholder {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.team-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.team-role {
+    -fx-font-size: 14px;
+    -fx-text-fill: #667eea;
+    -fx-font-style: italic;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #2C3E50;
+    -fx-padding: 40 40 40 40;
+}
+
+.footer-text {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+}
+
+.footer-subtext {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+/* Scroll Bar Styling */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #CBD5DC;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #667eea;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-arrow,
+.scroll-pane .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-opacity: 1;
+    }
+}
